@@ -1,0 +1,19 @@
+{
+  "name": "generator-webx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "files": [
+    "generators"
+  ],
+  "description": "",
+  "author": "wangjianfeng@sogou-inc.com",
+  "license": "ISC",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "yeoman-generator": "^2.0.3",
+    "yosay": "^2.0.1"
+  }
+}

@@ -1,0 +1,47 @@
+// 测试用的数据 需要放到dist里
+{   "version": "3",
+    "list": [
+        {
+            "namespace": "001",
+            "date": ["2018/01/01","2018/01/02","2018/01/03"],
+            "time": ["10:30-11:33", "10:30-11:32","10:30-11:31"],
+            "times": "21",
+            "day": 2,
+            "url": "www.jd.com",
+            "image": "",
+            "blacklist": [
+                "qq.com",
+                "sogo.com"
+            ],
+            "reminder": 0
+        },
+        {
+            "namespace": "002",
+            "date": ["2018/01/02"],
+            "time": ["10:30-11:30"],
+            "times": "22",
+            "day": 0,
+            "url": "www.jd.com",
+            "image": "",
+            "blacklist": [
+                "qq.com",
+                "sogo.com"
+            ],
+            "reminder": 0
+        },
+        {
+            "namespace": "003",
+            "date": ["2018/01/02"],
+            "time": ["10:30-11:30"],
+            "times": "23",
+            "day": 1,
+            "url": "www.jd.com",
+            "image": "",
+            "blacklist": [
+                "qq.com",
+                "sogo.com"
+            ],
+            "reminder": 1
+        }
+    ]
+}
