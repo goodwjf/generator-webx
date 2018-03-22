@@ -16,7 +16,6 @@ yo reactpackage
 
 ##### 然后就会在此目录下生成以下目录结构：
 ``` 
-
 ├── config
 │   ├── webpack.dev.js
 │   └── webpack.prod.js
