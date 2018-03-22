@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card } from 'antd'
+import { Card, Icon } from 'antd'
 
 export default class myCard extends Component {
    render() {
@@ -11,7 +11,7 @@ export default class myCard extends Component {
       }
     }
     return (
-      <Card { ...settings.card }>
+      <Card { ...card }>
         <h2>Hello webx</h2>
       </Card>
     )
