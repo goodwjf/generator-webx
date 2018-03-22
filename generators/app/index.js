@@ -1,5 +1,5 @@
 var Generator = require('yeoman-generator');
-var yosay = require('yosay');
+var yosay = require('yosay-sogou');
 var chalk = require('chalk');
 var path = require('path');
 
