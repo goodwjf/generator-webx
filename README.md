@@ -12,10 +12,10 @@ npm install -g yo
 npm install -g generator-webx
 
 ##### 在合适的地方新建一个文件夹，在文件夹下运行：
-yo reactpackage
+yo webx
 
 ##### 然后就会在此目录下生成以下目录结构：
-``` 
+```
 ├── config
 │   ├── webpack.dev.js
 │   └── webpack.prod.js
@@ -36,10 +36,13 @@ yo reactpackage
 ├── .babelrc
 ├── package.json
 └── postcss.config.js
-``` 
+```
 
 ##### 然后使用以下命令：
 
-npm run dev    //项目开发过程使用，启动服务，实时刷新</br>
-npm run pro    //开发完成之后打包文件
+项目开发过程使用，启动服务，实时刷新</br>
+npm run dev
+
+开发完成之后打包文件</br>
+npm run pro
 

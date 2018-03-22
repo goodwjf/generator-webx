@@ -14,6 +14,6 @@
   "dependencies": {
     "chalk": "^2.3.2",
     "yeoman-generator": "^2.0.3",
-    "yosay": "^2.0.1"
+    "yosay-sogou": "0.0.2"
   }
 }
