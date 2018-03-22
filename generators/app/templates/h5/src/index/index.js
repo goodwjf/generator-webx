@@ -5,7 +5,7 @@ import videoTemplate from 'component/page-video'
 
 var data = {
     "gid": 36975768,
-    "title": "视频视频视频视频",
+    "title": "Hello webx",
     "sourceid": 36975768,
     "sourceurl": "http://m.miaopai.com/show/channel/HHB8~gH3qprMX7erkX0UWLNfu7KGpxH7dmVzOw__",
     "publish_time": 1520599511,
