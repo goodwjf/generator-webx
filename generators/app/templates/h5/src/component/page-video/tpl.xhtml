@@ -1,0 +1,12 @@
+<div class="${css.content}">
+  <div class="${css.videoContainer}">
+    <video src="${it.video_url}" controls="true" poster="${it.image_info[0].name}"></video>
+  </div>
+  <div class="${css.content__hd}">
+    <h1 class="${css.title}">${it.title}</h1>
+    <div class="${css.subtitle}">
+      <span class="${css.source}">来自${utils.escape(it.source)}</span>
+      <span class="${css.time}">${utils.escape(it.visit)}次播放</span>
+    </div>
+  </div>
+</div>

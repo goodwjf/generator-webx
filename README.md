@@ -14,8 +14,32 @@ npm install -g generator-webx
 ##### 在合适的地方新建一个文件夹，在文件夹下运行：
 yo webx
 
+##### 选择项目类型
+
+目前支持类型： H5、 React （后续会支持的更多...）
+
 ##### 然后就会在此目录下生成以下目录结构：
 ```
+H5：
+
+├── src
+│   ├── components
+│   │
+│   ├── common
+│   │
+│   ├── third
+│   │
+│   ├── index
+│   │
+│   ├── utils
+│   │
+├── node_modules
+├── package.json
+└── webpack.config.js
+
+
+React：
+
 ├── config
 │   ├── webpack.dev.js
 │   └── webpack.prod.js

@@ -1,0 +1,59 @@
+{
+  "name": "dream",
+  "version": "1.0.0",
+  "description": "build",
+  "system": {
+    "development": {
+      "input": "./src",
+      "output": "./development/increment",
+      "public": ""
+    },
+    "production": {
+      "input": "./src",
+      "output": "./production/increment",
+      "public": ""
+    },
+    "share": {
+      "input": "./src",
+      "output": "./production/increment",
+      "public": "/mshare/"
+    }
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=development webpack --d=system",
+    "dev": "cross-env NODE_ENV=development webpack -w --d=system",
+    "pro": "cross-env NODE_ENV=production webpack --d=system",
+    "share": "cross-env NODE_ENV=production SHARE=1 webpack --d=system"
+  },
+  "author": "redky@qq.com",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.23.0",
+    "clean-webpack-plugin": "^0.1.15",
+    "cross-env": "^3.2.3",
+    "css-loader": "^0.26.2",
+    "es6-string-template-loader": "^2.1.0",
+    "exports-loader": "^0.6.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.1",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.28.0",
+    "image-webpack-loader": "^3.2.0",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^1.3.3",
+    "precss": "^1.4.0",
+    "resolve-url-loader": "^2.0.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
+    "webpack": "^3.8.1",
+    "webpack-uglify-js-plugin": "^1.1.9",
+    "yargs": "^7.0.2"
+  }
+}

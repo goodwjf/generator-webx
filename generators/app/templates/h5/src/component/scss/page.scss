@@ -1,0 +1,49 @@
+// 正文内容区域
+.content {
+  padding-bottom: 20px;
+  background-color: #fff;
+  color: #333;
+  &__hd {
+    margin: 0 15px;
+    overflow: hidden;
+  }
+  &__bd {
+    margin: 0 15px;
+    margin-top: 5px;
+  }
+}
+
+.title {
+  color: #333;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 25px 0 10px;
+}
+
+.subtitle {
+  font-size: 12px;
+  line-height: 24px;
+  color: rgba(51, 51, 51, 0.5);
+}
+
+.time,
+.source {
+  margin-right: 10px;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100% !important;
+  height: auto !important;
+  padding-top: 56.25%; // 16:9 比例
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #000000;
+  }
+}
