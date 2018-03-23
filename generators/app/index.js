@@ -5,21 +5,55 @@ var path = require('path');
 var fs = require('fs');
 
 module.exports = class extends Generator {
-  prompting () {
+  constructor(args, opts) {
+    super(args, opts);
+    this.argument('yarn', { type: String, required: false });
+    this.option('y')
+    this.option('n')
+    this.work = true
+  }
 
+  help() {
+    return 'Please visit -> ' + chalk.gray.underline('https://www.npmjs.com/package/generator-webx?activeTab=readme')
+  }
+
+  initializing () {
+    if (this.options.yarn === 'yarn') {
+      this.work = false
+      if(this.options.yes || this.options.no) {
+        let name = ''
+        if (this.options.yes) {
+          this.config.set('yarn', true)
+          name = 'yarn'
+        }
+        if (this.options.no) {
+          this.config.set('yarn', false)
+          name = 'npm'
+        }
+        this.log(chalk.gray('Package management tool set to ') + chalk.red(name))
+      } else {
+        this.log(chalk.gray('The command ') + chalk.red('yarn') + chalk.gray(' is missing parameters'))
+      }
+    }
+  }
+
+  prompting () {
+    if (!this.work) {
+      return
+    }
     this.log(yosay('welcome to ' + chalk.red('webx')))
     this.name = path.basename(process.cwd());
     var prompts = [
       {
         type: 'input',
         name: 'name',
-        message: chalk.yellow('Please enter the project ') + chalk.red('name') + chalk.yellow(' .'),
+        message: chalk.gray('Please enter the project ') + chalk.red('name') + chalk.gray(' .'),
         default: this.name
       },
       {
         type: 'list',
         name: 'tools',
-        message: chalk.yellow('Please select development ') + chalk.red('type') + chalk.yellow(' .'),
+        message: chalk.gray('Please select development ') + chalk.red('type') + chalk.gray(' .'),
         choices: [
           {
             name: 'H5',
@@ -34,7 +68,7 @@ module.exports = class extends Generator {
       {
         type: 'list',
         name: 'demo',
-        message: chalk.yellow('Whether to create an ') + chalk.red('instance') + chalk.yellow(' ?'),
+        message: chalk.gray('Whether to create an ') + chalk.red('instance') + chalk.gray(' ?'),
         choices: [
           {
             name: 'yes',
@@ -57,6 +91,9 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    if (!this.work) {
+      return
+    }
     if (this.tools === 'react') {
       this.demo && this.fs.copy(this.templatePath('src'), 'src')
       this.fs.copy(this.templatePath('config'), 'config')
@@ -88,11 +125,24 @@ module.exports = class extends Generator {
 
   }
 
+  install() {
+    if (!this.work) {
+      return
+    }
+    this.log(chalk.red(this.config.get('yarn') ? ' Yarn ' : ' Npm ') + chalk.green(' installation dependencies'))
+    if (this.config.get('yarn')) {
+      this.yarnInstall()
+    } else {
+      this.npmInstall()
+    }
+  }
+
   end() {
-    this.log(chalk.green('Installation dependencies'))
-    this.npmInstall().then((e)=>{
-      this.log(chalk.green('Installed'))
-      this.log(yosay('Have a nice meal'))
-    })
+    if (!this.work) {
+      return
+    }
+    this.log(chalk.green('Installed'))
+    this.log(yosay('Have a nice meal'))
   }
 }
+

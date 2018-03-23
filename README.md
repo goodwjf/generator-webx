@@ -11,6 +11,10 @@ npm install -g yo
 ##### 然后直接安装脚手架
 npm install -g generator-webx
 
+##### 安装Yarn包管理工具(可选)
+npm install -g yarn
+> 安装后需要手动开启 yo webx yarn --yes | --no， 建议安装并开启（这样项目依赖包安装会更快）
+
 ##### 在合适的地方新建一个文件夹，在文件夹下运行：
 yo webx
 
